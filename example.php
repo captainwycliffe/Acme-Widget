@@ -12,7 +12,7 @@ echo "================================\n\n";
 
 echo "Example 1: B01, G01\n";
 $basket1 = BasketFactory::create();
-$basket1->add('BO1');
+$basket1->add('B01');
 $basket1->add('G01');
 echo "Total: $" . number_format($basket1->total(), 2) . "\n\n";
 

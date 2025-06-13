@@ -11,6 +11,7 @@ use Acme\Widget\Repository\ProductRepositoryInterface;
 final class Basket
 {
 
+    /** @var array<string, BasketItem> */
     private array $items = [];
 
     public function __construct(
@@ -68,6 +69,7 @@ final class Basket
         return $subtotal;
     }
 
+    /** @return array<BasketItem> */
     public function getItems(): array
     {
         return array_values($this->items);

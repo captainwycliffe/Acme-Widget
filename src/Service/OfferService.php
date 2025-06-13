@@ -8,6 +8,7 @@ use Acme\Widget\Model\BasketItem;
 
 final class OfferService
 {
+    /** @param array<OfferInterface> $offers */
     public function __construct(
         private readonly array $offers = []
     ) {
@@ -25,6 +26,7 @@ final class OfferService
         return $totalDiscount;
     }
 
+    /** @return array<OfferInterface> */
     public function getApplicableOffers(BasketItem $item): array
     {
         return array_filter(

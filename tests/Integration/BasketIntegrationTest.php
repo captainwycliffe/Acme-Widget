@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Acme\Widget\Tests\Integration;
 
 use Acme\Widget\Factory\BasketFactory;
-use PHPUnit\Framework\Testcase;
+use PHPUnit\Framework\TestCase;
 
 final class BasketIntegrationTest extends TestCase 
 {

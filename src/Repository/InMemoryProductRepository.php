@@ -8,6 +8,7 @@ use Acme\Widget\Model\Product;
 
 final class InMemoryProductRepository implements ProductRepositoryInterface
 {
+    /** @var array<string, Product> */
     private array $products = [];
 
     public function __construct()
@@ -24,6 +25,7 @@ final class InMemoryProductRepository implements ProductRepositoryInterface
         return $this->products[$code] ?? null;
     }
 
+    /** @return array<Product> */
     public function findAll(): array
     {
         return array_values($this->products);

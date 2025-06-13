@@ -10,6 +10,6 @@ interface ProductRepositoryInterface
 {
     public function findByCode(string $code): ?Product;
 
-
+    /** @return array<Product> */
     public function findAll(): array;
 }
