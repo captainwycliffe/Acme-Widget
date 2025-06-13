@@ -21,7 +21,7 @@ final class BuyOneGetOneHalfPriceOffer implements OfferInterface
         }
 
         $discountableItems = intval($item->quantity / 2);
-        return $discountableItems * intval($item->product->priceInCents / 2);
+        return $discountableItems * intval(round($item->product->priceInCents / 2));
     }
 
     public function getDescription(): string

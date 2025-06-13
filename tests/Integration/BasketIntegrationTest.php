@@ -41,7 +41,7 @@ final class BasketIntegrationTest extends TestCase
         $basket = BasketFactory::create();
         
         $this->expectException(\invalidArgumentException::class);
-        $this->expectExceptionMessage("product with code 'INVALID' not found");
+        $this->expectExceptionMessage("Product with code 'INVALID' not found");
 
         $basket->add('INVALID');
     }
@@ -65,9 +65,9 @@ final class BasketIntegrationTest extends TestCase
         $basket->add('R01');
         $basket->add('G01');
 
-        $this->assertSame(2, $basket->getItemCOunt());
+        $this->assertSame(2, $basket->getItemCount());
 
-        basket->clear();
+        $basket->clear();
 
         $this->assertSame(0, $basket->getItemCount());
         $this->assertSame(0.0, $basket->total());

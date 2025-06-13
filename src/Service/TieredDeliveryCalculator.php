@@ -17,7 +17,7 @@ final class TieredDeliveryCalculator implements DeliveryCalculatorInterface
             return 0;
         }
 
-        if ($basketTotalInCents >= self::REDUCED_DELIVERY_THRESHLD) {
+        if ($basketTotalInCents >= self::REDUCED_DELIVERY_THRESHOLD) {
             return self::REDUCED_DELIVERY_CHARGE;
         }
 

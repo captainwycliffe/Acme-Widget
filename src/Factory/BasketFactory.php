@@ -18,7 +18,7 @@ final class BasketFactory
         $productRepository = new InMemoryProductRepository();
         $deliveryCalculator = new TieredDeliveryCalculator();
 
-        $offer = [
+        $offers = [
             new BuyOneGetOneHalfPriceOffer('R01')
         ];
 

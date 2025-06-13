@@ -13,7 +13,7 @@ final class BuyOneGetOneHalfPriceOfferTest extends TestCase
 {
     public function testNoDiscountForSingleItem(): void
     {
-        $offer = new BuyOnGetOneHalfPriceOffer('R01');
+        $offer = new BuyOneGetOneHalfPriceOffer('R01');
         $product = new Product('R01', 'Red Widget', 3295);
         $item = new BasketItem($product, 1);
 
@@ -41,7 +41,7 @@ final class BuyOneGetOneHalfPriceOfferTest extends TestCase
 
         $discount = $offer->calculateDiscount($item);
 
-        $this->assertSame(3294, $discount);
+        $this->assertSame(3296, $discount);
     }
 
     public function testNoDiscountForDifferentProduct(): void 

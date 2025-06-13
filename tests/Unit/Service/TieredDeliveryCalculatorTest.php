@@ -19,7 +19,7 @@ final class TieredDeliveryCalculatorTest extends TestCase
     public function testStandardDeliveryCharge(): void
     {
         $charge = $this->calculator->calculateDeliveryChargeInCents(1000);
-        $this->assertSame(295, $charge);
+        $this->assertSame(495, $charge);
     }
 
     public function testReducedDeliveryCharge(): void

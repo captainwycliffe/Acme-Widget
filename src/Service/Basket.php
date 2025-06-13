@@ -11,7 +11,7 @@ use Acme\Widget\Repository\ProductRepositoryInterface;
 final class Basket
 {
 
-    private array $item = [];
+    private array $items = [];
 
     public function __construct(
         private readonly ProductRepositoryInterface $productRepository,
@@ -45,6 +45,11 @@ final class Basket
     private function getTotalInCents(): int
     {
         $subtotal = $this->getSubtotalInCents();
+
+        if($subtotal === 0) {
+            return 0;
+        }
+
         $deliveryCharge = $this->deliveryCalculator->calculateDeliveryChargeInCents($subtotal);
 
         return $subtotal + $deliveryCharge;
@@ -57,7 +62,7 @@ final class Basket
         foreach ($this->items as $item) {
             $itemTotal = $item->getTotalPriceInCents();
             $discount = $this->offerService->calculateTotalDiscount($item);
-            $subtotal += $itemTotal - discount;
+            $subtotal += $itemTotal - $discount;
         }
 
         return $subtotal;
