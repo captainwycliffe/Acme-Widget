@@ -27,8 +27,8 @@ A PHP implementation of a shopping basket system with delivery charges and promo
 
 ```bash
 # Clone/download the project
-git clone <your-repo-url>
-cd acme-widget-basket
+git clone https://github.com/captainwycliffe/Acme-Widget.git
+cd Acme-Widget
 
 # Build and start containers
 docker-compose up -d
